@@ -21,7 +21,7 @@ import { ViewCandidateComponent } from './view-candidate/view-candidate.componen
 import { UpdateCandidateComponent } from './update-candidate/update-candidate.component';
 import { DeleteCandidateComponent } from './delete-candidate/delete-candidate.component';
 import { GenerateCandidateApplicationIdComponent } from './generate-candidate-application-id/generate-candidate-application-id.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,11 +43,8 @@ import { GenerateCandidateApplicationIdComponent } from './generate-candidate-ap
     ViewCandidateComponent,
     UpdateCandidateComponent,
     DeleteCandidateComponent,
-    GenerateCandidateApplicationIdComponent
+    GenerateCandidateApplicationIdComponent,
   ],
-  imports: [
-    CommonModule,
-    CandidateRoutingModule
-  ]
+  imports: [CommonModule, ReactiveFormsModule, CandidateRoutingModule],
 })
-export class CandidateModule { }
+export class CandidateModule {}
