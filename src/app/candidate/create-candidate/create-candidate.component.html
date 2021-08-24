@@ -2,26 +2,26 @@
   <h3>Candidate Registration Form</h3>
 
   <div class="card" style="padding: 10px; margin: auto">
-    <form>
+    <form [formGroup]="candidateCreationForm" (ngSubmit)="onSubmit()">
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="postionApplied" class="col-sm-2 col-form-label"
           >Position Applied</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="postionApplied" formControlName="postionApplied" />
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputFullname" class="col-sm-2 col-form-label"
+        <label for="inputFullname" class="col-sm-2 col-form-label" 
           >Full Name</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputFullname" />
+          <input type="text" class="form-control" id="inputFullname"  formControlName="fullName"/>
         </div>
       </div>
 
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="inpurRadio" class="col-sm-2 col-form-label"
           >Gender</label
         >
         <div class="col-sm-10">
@@ -33,9 +33,10 @@
             <input
               type="radio"
               class="btn-check"
-              name="btnradio"
+              formControlName="gender"
               id="btnradio1"
-              autocomplete="off"
+              name="gender"
+              value="female"
             />
             <label class="btn btn-outline-primary" for="btnradio1"
               >Feamle</label
@@ -44,10 +45,10 @@
             <input
               type="radio"
               class="btn-check"
-              name="btnradio"
+              formControlName="gender"
+              name="gender"
               id="btnradio2"
-              autocomplete="off"
-              checked
+              value="male"
             />
             <label class="btn btn-outline-primary" for="btnradio2">Male</label>
           </div>
@@ -55,79 +56,81 @@
       </div>
 
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="streetAddress" class="col-sm-2 col-form-label"
           >Street Address</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="streetAddress" 
+          formControlName="streetAddress" />
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="streetAddress2" class="col-sm-2 col-form-label"
           >Street Address Line 2</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="streetAddress2" 
+          formControlName="streetAddress2"/>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label">City</label>
+        <label for="city" class="col-sm-2 col-form-label">City</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="city" formControlName="city" />
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="state" class="col-sm-2 col-form-label"
           >State/Province</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="state" formControlName="state" />
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="zipcode" class="col-sm-2 col-form-label"
           >Postal / Zip Code</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="zipcode" formControlName="zipcode" />
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="emailAddress" class="col-sm-2 col-form-label"
           >Email Address</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="email" class="form-control" id="emailAddress" formControlName="emailAddress" />
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="phoneNumber" class="col-sm-2 col-form-label"
           >Phone number</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" />
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label"
+        <label for="source" class="col-sm-2 col-form-label"
           >How did you hear about us?</label
         >
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" />
+          <input type="text" class="form-control" id="source" formControlName="source" />
         </div>
       </div>
 
       <div class="row mb-3">
         <div class="col-sm-10 offset-sm-2">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck1" />
+            <input class="form-check-input" type="checkbox" id="gridCheck1" formControlName="isTermsAgree"/>
             <label class="form-check-label" for="gridCheck1">
-              Example checkbox
+              I agree terms and conditions
             </label>
           </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary float-end">Submit</button>
     </form>
   </div>
 </div>
