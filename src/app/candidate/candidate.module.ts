@@ -22,6 +22,8 @@ import { UpdateCandidateComponent } from './update-candidate/update-candidate.co
 import { DeleteCandidateComponent } from './delete-candidate/delete-candidate.component';
 import { GenerateCandidateApplicationIdComponent } from './generate-candidate-application-id/generate-candidate-application-id.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpUrlEncodingCodec } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -46,5 +48,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     GenerateCandidateApplicationIdComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, CandidateRoutingModule],
+  providers: [HttpUrlEncodingCodec]
 })
 export class CandidateModule {}

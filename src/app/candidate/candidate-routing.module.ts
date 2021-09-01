@@ -5,7 +5,7 @@ import { CreateCandidateComponent } from './create-candidate/create-candidate.co
 
 const routes: Routes = [
   { path: '', component: CandidateComponent },
-  { path: 'new', component: CreateCandidateComponent },
+  { path: 'new', component: CreateCandidateComponent }
 ];
 
 @NgModule({
